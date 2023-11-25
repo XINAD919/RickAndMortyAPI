@@ -17,6 +17,17 @@ body {
   user-select: none;
   scroll-behavior: smooth;
   font-family: 'Roboto', sans-serif;
+  background-color: #272B33;
+}
+
+h2,
+span {
+  color: white;
+}
+
+.text-gray {
+  color: #9ca3af;
+  font-weight: 500;
 }
 
 ::-webkit-scrollbar {
@@ -28,7 +39,9 @@ body {
   background: #9ca3af;
   border-radius: 50px;
 }
+
 $baseFontSize: 16;
+
 // Función que convierte pixeles en rem
 @function rem($pixels, $context: $baseFontSize) {
   @if (unitless($pixels)) {

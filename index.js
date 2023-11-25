@@ -8,25 +8,33 @@ document.addEventListener("DOMContentLoaded", async function () {
     const response = await fetch(defaulUrl + "/character?page=" + page);
     const data = await response.json();
 
-    data.results.map((c) => {
+    data.results.map(async (c) => {
       const divCharacter = document.createElement("div");
       divCharacter.className = "card";
+      const episode = await fetch(c.episode[0]).then((response) =>
+        response.json()
+      );
       divCharacter.innerHTML += `
-        <div class='img_container'>
-        <img src="${c.image}" alt="${c.name} image" />
+        <div class="img_container">
+          <img src="${c.image}" alt="${c.name} image" />
         </div>
-        <div class='info_container'>
-          <h2>${c.name}</h2>
-          <span>
-          <span class='status_icon_${c.status}'></span>
-          ${c.status} - ${c.species}
-          </span>
-          <span>
-            Last known location: 
+        <div class="info_container">
+          <h2 class=''>${c.name}</h2>
+          <div class="section">
+            <span class="status_icon_${c.status}"></span>
             <span>
-              ${c.location.name}
+
+            ${c.status} - ${c.species}
             </span>
-          </span>
+          </div>
+          <div class="section">
+            <span  class='text-gray'> Last known location: </span>
+            <span> ${c.location.name} </span>
+          </div>
+          <div class="section">
+            <span class='text-gray'> First seen in: </span>
+            <span> ${episode.name} </span>
+          </div>
         </div>
       `;
       root.appendChild(divCharacter);
