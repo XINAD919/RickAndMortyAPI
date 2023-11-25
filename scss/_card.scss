@@ -1,0 +1,60 @@
+#cards_container {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 1rem;
+  .card {
+    display: flex;
+    padding: 1rem 0.5rem;
+    border-radius: 5%;
+    border: 1px solid ;
+
+    .img_container {
+      display: flex;
+      flex-direction: column;
+      width: 10rem;
+      height: 10rem;
+    }
+
+    .info_container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 0.5rem;
+
+      h2 {
+        cursor: pointer;
+        width: fit-content;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .status_icon_Dead {
+          display: block;
+          width: 0.5rem;
+          height: 0.5rem;
+          background: #d63d2e;
+          border-radius: 50%;
+        }
+
+        .status_icon_Alive {
+          display: block;
+          width: 0.5rem;
+          height: 0.5rem;
+          background: #55cc44;
+          border-radius: 50%;
+        }
+
+        .status_icon_unknown {
+          display: block;
+          width: 0.5rem;
+          height: 0.5rem;
+          background: #9fa09f;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

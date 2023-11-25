@@ -1,0 +1,16 @@
+{
+  "name": "rick-and-morty-api",
+  "version": "1.0.0",
+  "description": "html css js api consumtion",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch scss:styles"
+  },
+  "author": "daniel castaño",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
