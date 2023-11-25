@@ -4,7 +4,7 @@
   justify-content: center;
   // display: grid;
   // grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
 
   .card {
     display: flex;
@@ -29,12 +29,16 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-left: 0.5rem;
+      padding-left: 1rem;
       min-width: max-content;
 
       h2 {
-        cursor: pointer;
         width: fit-content;
+        cursor: pointer;
+
+        &:hover {
+          color: #FF9700;
+        }
       }
 
       .section {
@@ -47,7 +51,11 @@
           flex-direction: column;
           align-items: baseline;
           gap: 0;
-          padding: .5rem 0;
+          padding: 0.5rem 0 0 0;
+
+          span {
+            padding: .3rem 0;
+          }
         }
 
         .status_icon_Dead {
