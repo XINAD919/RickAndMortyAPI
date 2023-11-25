@@ -108,7 +108,7 @@ span {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 #cards_container .card {
   display: flex;
@@ -130,12 +130,15 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 0.5rem;
+  padding-left: 1rem;
   min-width: max-content;
 }
 #cards_container .card .info_container h2 {
-  cursor: pointer;
   width: fit-content;
+  cursor: pointer;
+}
+#cards_container .card .info_container h2:hover {
+  color: #FF9700;
 }
 #cards_container .card .info_container .section {
   display: flex;
@@ -147,7 +150,10 @@ span {
   flex-direction: column;
   align-items: baseline;
   gap: 0;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0 0 0;
+}
+#cards_container .card .info_container .section:has(.text-gray) span {
+  padding: 0.3rem 0;
 }
 #cards_container .card .info_container .section .status_icon_Dead {
   display: block;
