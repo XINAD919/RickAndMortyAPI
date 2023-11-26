@@ -116,7 +116,7 @@ span {
   height: 220px;
   overflow: hidden;
   border-radius: 0.5rem;
-  background: rgb(60, 62, 68);
+  background: #3c3e44;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 #cards_container .card .img_container img {
@@ -175,6 +175,70 @@ span {
   height: 0.5rem;
   background: #9fa09f;
   border-radius: 50%;
+}
+
+header {
+  margin-bottom: 3rem;
+}
+header div.header_container {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+}
+header div.header_container div.img_container a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+}
+header div.header_container div.img_container a h2 {
+  color: #333333;
+}
+header div.header_container div.img_container a svg {
+  fill: #333333;
+}
+header div.header_container .links_container ul {
+  display: flex;
+  gap: 1rem;
+}
+header div.header_container .links_container ul li {
+  list-style: none;
+  font-weight: 600;
+  color: #333333;
+  transition: color 0.2s ease 0s;
+  cursor: pointer;
+}
+header div.header_container .links_container ul li:hover {
+  color: #FF9700;
+}
+
+footer {
+  width: 100%;
+  height: 6rem;
+  background-color: #202329;
+  margin-top: 6rem;
+}
+footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 0.2rem;
+}
+footer div a {
+  text-decoration: none;
+  color: white;
+  border-bottom: #FF9700 1px solid;
+  font-weight: 600;
+  transition: color 0.2s ease 0s;
+}
+footer div a:hover {
+  color: #FF9700;
+  border-bottom: none;
 }
 
 /*# sourceMappingURL=globals.css.map */

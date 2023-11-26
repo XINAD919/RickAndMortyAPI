@@ -1,0 +1,27 @@
+footer {
+  width: 100%;
+  height: 6rem;
+  background-color: #202329;
+  margin-top: 6rem;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 0.2rem;
+
+    a {
+      text-decoration: none;
+      color: white;
+      border-bottom: #FF9700 1px solid;
+      font-weight: 600;
+      transition: color 0.2s ease 0s;
+
+      &:hover {
+        color: #FF9700;
+        border-bottom: none;
+      }
+    }
+  }
+}

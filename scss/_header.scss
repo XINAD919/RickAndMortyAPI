@@ -1,0 +1,50 @@
+header {
+  margin-bottom: 3rem;
+
+  div.header_container {
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+
+
+    div.img_container {
+      a {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+
+        h2 {
+          color: #333333;
+        }
+
+        svg {
+          fill: #333333;
+        }
+      }
+    }
+
+    .links_container {
+      ul {
+        display: flex;
+        gap: 1rem;
+
+        li {
+          list-style: none;
+          font-weight: 600;
+          color: #333333;
+          transition: color 0.2s ease 0s;
+          cursor: pointer;
+
+          &:hover {
+            color: #FF9700;
+          }
+        }
+      }
+    }
+  }
+}
