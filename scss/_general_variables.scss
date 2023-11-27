@@ -12,12 +12,19 @@ html,
 body {
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-width: 100vh;
   overflow-x: hidden;
   -webkit-user-select: none;
   user-select: none;
   scroll-behavior: smooth;
   font-family: 'Roboto', sans-serif;
   background-color: #272B33;
+}
+
+main {
+  flex-grow: 1;
 }
 
 h2,
