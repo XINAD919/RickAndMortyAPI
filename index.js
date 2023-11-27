@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     let minPage = 1;
     let maxPage = 42;
     let currentPage = minPage;
-    const prevBtn = document.querySelector("#PrevBtn");
-    const nextBtn = document.querySelector("#NextBtn");
+    const prevBtn = document.querySelector("#prevBtn");
+    const nextBtn = document.querySelector("#nextBtn");
     const Page = document.querySelector("#showPage");
     Page.textContent = `${currentPage}`;
     const root = document.querySelector("#cards_container");
