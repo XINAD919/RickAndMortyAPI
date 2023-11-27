@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const prevBtn = document.querySelector("#PrevBtn");
     const nextBtn = document.querySelector("#NextBtn");
     const Page = document.querySelector("#showPage");
+    Page.textContent = `${currentPage}`;
     const root = document.querySelector("#cards_container");
     root.innerHTML = "";
 
@@ -128,6 +129,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     nextBtn.addEventListener("click", function () {
       if (currentPage < maxPage) {
         currentPage++;
+        Page.textContent = `${currentPage}`;
         getData({ currentPage });
       }
     });
@@ -136,6 +138,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     prevBtn.addEventListener("click", function () {
       if (currentPage > minPage) {
         currentPage--;
+        Page.textContent = `${currentPage}`;
         getData({ currentPage });
       }
     });
