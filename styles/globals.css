@@ -323,4 +323,30 @@ footer div a:hover {
   border-radius: 50%;
 }
 
+.paginator {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.paginator div {
+  width: fit-content;
+  background-color: white;
+  color: #333333;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.paginator #showPage {
+  width: fit-content;
+  background-color: white;
+  color: #333333;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
 /*# sourceMappingURL=globals.css.map */
