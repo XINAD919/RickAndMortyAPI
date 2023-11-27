@@ -3,9 +3,12 @@ footer {
   height: 6rem;
   background-color: #202329;
   margin-top: 6rem;
+  display: flex;
+  justify-self: end;
 
   div {
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
     height: 100%;
