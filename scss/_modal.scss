@@ -15,6 +15,7 @@
 
 .modal_container {
   display: flex;
+  flex-direction: column;
   position: absolute;
   z-index: 1000;
   width: fit-content;
@@ -23,11 +24,17 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   border-radius: 0.5rem;
   overflow: hidden;
-  padding: 1.5rem;
-  gap: 1rem;
+  padding: 1rem 2rem;
   opacity: 1;
   clip-path: circle(100%);
   transition: opacity .5s ease, clip-path .5s ease;
+  text-align: center;
+
+  .modal {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
 
   #close_button {
     position: absolute;
@@ -38,6 +45,9 @@
   }
 
   .modal_image_container {
+    display: flex;
+    align-items: center;
+
     img {
       width: 16rem;
       border-radius: .5rem;
