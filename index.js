@@ -20,44 +20,14 @@ document.addEventListener("DOMContentLoaded", async function () {
     const showModal = async (id) => {
       const response = await fetch(defaulUrl + `/character/${id}`);
       const data = await response.json();
-      const modalContainer = document.querySelector(".modal_container");
       const episode = await fetch(data.episode[0]).then((response) =>
         response.json()
       );
-      // Si el modal ya existe, actualiza su contenido
-      if (modalContainer) {
-        const modalImage = modalContainer.querySelector(
-          ".modal_image_container img"
-        );
-        const modalInfo = modalContainer.querySelector(".modal_info_container");
 
-        modalImage.src = data.image;
-        modalImage.alt = data.name;
+      const modalContainer = document.createElement("div");
+      modalContainer.className = "modal_container";
 
-        modalInfo.innerHTML = `
-      <h2>${data.name}</h2>
-      <span>Gender: <span>${data.gender}</span></span>
-      <span>Species: <span>${data.species}</span></span>
-      <span class="status">
-        Status: <span class="status_icon_${data.status}"></span>
-        <span>${data.status}</span>
-      </span>
-      <span>Origin: <span>${data.origin.name}</span></span>
-      <span>Last known location: <span>${data.location.name}</span></span>
-      <span>Num episodes in which appears: <span>${data.episode.length}</span></span>
-          <div class="section">
-             <span class='text-gray'> First seen in: </span>
-             <span> ${episode.name} </span>
-           </div>
-    `;
-
-        modalContainer.classList.remove("close"); // Asegúrate de que el modal esté abierto
-      } else {
-        // Si el modal no existe, se créa y agrega el contenido
-        const newModalContainer = document.createElement("div");
-        newModalContainer.className = "modal_container";
-
-        newModalContainer.innerHTML = `
+      modalContainer.innerHTML = `
       <div id="close_button">
         <i class="fa-solid fa-xmark"></i>
       </div>
@@ -82,24 +52,27 @@ document.addEventListener("DOMContentLoaded", async function () {
       </div>
     `;
 
-        root.appendChild(newModalContainer);
+      root.appendChild(modalContainer);
 
-        const closeButton = newModalContainer.querySelector("#close_button");
-        closeButton.addEventListener("click", () => {
-          newModalContainer.classList.add("close");
-          const overlay = document.querySelector(".overlay");
-          overlay.remove();
-        });
+      const closeButton = modalContainer.querySelector("#close_button");
 
-        const overlay = document.createElement("div");
-        overlay.className = "overlay";
-        document.body.appendChild(overlay);
+      // función de cerrar el modal mediante el boton
+      closeButton.addEventListener("click", () => {
+        modalContainer.classList.add("close");
+        const overlay = document.querySelector(".overlay");
+        overlay.remove();
+      });
 
-        overlay.addEventListener("click", () => {
-          newModalContainer.classList.add("close");
-          overlay.remove();
-        });
-      }
+      // overlay del modal
+      const overlay = document.createElement("div");
+      overlay.className = "overlay";
+      document.body.appendChild(overlay);
+
+      // al dar click en el overlay se cierra el modal
+      overlay.addEventListener("click", () => {
+        modalContainer.classList.add("close");
+        overlay.remove();
+      });
     };
 
     const getData = async ({ currentPage }) => {
@@ -151,6 +124,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     await getData({ currentPage });
 
+    // evento para accion next de cambio de pagina
     nextBtn.addEventListener("click", function () {
       if (currentPage < maxPage) {
         currentPage++;
@@ -158,6 +132,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
     });
 
+    // evento para accion previous de cambio de pagina
     prevBtn.addEventListener("click", function () {
       if (currentPage > minPage) {
         currentPage--;
