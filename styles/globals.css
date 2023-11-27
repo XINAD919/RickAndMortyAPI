@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 * {
   box-sizing: border-box;
@@ -244,6 +245,18 @@ footer div a:hover {
   border-bottom: none;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Ajusta la opacidad aquí */
+  z-index: 999;
+  /* Asegúrate de que tenga un z-index superior al del modal */
+}
+
 .modal_container.close {
   opacity: 0;
   clip-path: circle(0%);
@@ -251,7 +264,8 @@ footer div a:hover {
 
 .modal_container {
   display: flex;
-  position: relative;
+  position: absolute;
+  z-index: 1000;
   width: fit-content;
   height: fit-content;
   background: #3c3e44;
