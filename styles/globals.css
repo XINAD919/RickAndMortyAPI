@@ -366,6 +366,10 @@ footer div a:hover {
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  transition: color 0.2s ease 0s;
+}
+.paginator div:hover {
+  color: #FF9700;
 }
 .paginator #showPage {
   width: fit-content;
@@ -374,6 +378,10 @@ footer div a:hover {
   font-weight: 600;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
+  transition: color 0.2s ease 0s;
+}
+.paginator #showPage:hover {
+  color: #FF9700;
 }
 
 /*# sourceMappingURL=globals.css.map */

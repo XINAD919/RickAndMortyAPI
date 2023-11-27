@@ -14,6 +14,11 @@
     border-radius: .5rem;
     padding: .5rem 1rem;
     cursor: pointer;
+    transition: color 0.2s ease 0s;
+
+    &:hover {
+      color: #FF9700;
+    }
   }
 
   #showPage {
@@ -23,5 +28,10 @@
     font-weight: 600;
     border-radius: .5rem;
     padding: .5rem 1rem;
+    transition: color 0.2s ease 0s;
+
+    &:hover {
+      color: #FF9700;
+    }
   }
 }
