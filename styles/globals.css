@@ -221,9 +221,12 @@ footer {
   height: 6rem;
   background-color: #202329;
   margin-top: 6rem;
+  display: flex;
+  justify-self: end;
 }
 footer div {
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -239,6 +242,71 @@ footer div a {
 footer div a:hover {
   color: #FF9700;
   border-bottom: none;
+}
+
+.modal_container.close {
+  opacity: 0;
+  clip-path: circle(0%);
+}
+
+.modal_container {
+  display: flex;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  background: #3c3e44;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  padding: 1.5rem;
+  gap: 1rem;
+  opacity: 1;
+  clip-path: circle(100%);
+  transition: opacity 0.5s ease, clip-path 0.5s ease;
+}
+.modal_container #close_button {
+  position: absolute;
+  right: 0.8rem;
+  top: 0.5rem;
+  color: white;
+  cursor: pointer;
+}
+.modal_container .modal_image_container img {
+  width: 16rem;
+  border-radius: 0.5rem;
+}
+.modal_container .modal_info_container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+.modal_container .modal_info_container .status {
+  display: flex;
+  align-items: center;
+}
+.modal_container .modal_info_container .status .status_icon_Dead {
+  margin: 0rem 0.2rem;
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #d63d2e;
+  border-radius: 50%;
+}
+.modal_container .modal_info_container .status .status_icon_Alive {
+  margin: 0rem 0.2rem;
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #55cc44;
+  border-radius: 50%;
+}
+.modal_container .modal_info_container .status .status_icon_unknown {
+  margin: 0rem 0.2rem;
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #9fa09f;
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=globals.css.map */
