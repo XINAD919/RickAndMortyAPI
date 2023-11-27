@@ -37,21 +37,40 @@ document.addEventListener("DOMContentLoaded", async function () {
       </div>
       <div class="modal_info_container">
         <h2>${data.name}</h2>
-        <span>Gender: <span>${data.gender}</span></span>
-        <span>Species: <span>${data.species}</span></span>
-        <span class="status">
-          Status: <span class="status_icon_${data.status}"></span>
-          <span>${data.status}</span>
-        </span>
-        <span>Origin: <span>${data.origin.name}</span></span>
-        <span>Last known location: <span>${data.location.name}</span></span>
-        <span>Num episodes in which appears: <span>${data.episode.length}</span></span>
-            <div class="section">
-             <span class='text-gray'> First seen in: </span>
-             <span> ${episode.name} </span>
-           </div>
+        <div class="section">
+          <span class="text-gray">Gender: </span>
+          <span>${data.gender}</span>
+        </div>
+        <div class="section">
+          <span class="text-gray">Species: </span>
+          <span>${data.species}</span>
+        </div>
+        <div class="section">
+        <span class="text-gray">Status:</span>
+        <div>
+        <span class="status_icon_${data.status}"></span>
+          <span> ${data.status}</span>
+        </div>
+        </div>
+        <div class="section">
+          <span class="text-gray">Origin: </span>
+          <span>${data.origin.name}</span>
+        </div>
+        <div class="section">
+          <span class="text-gray">Last known location: </span>
+          <span>${data.location.name}</span>
+        </div>
+
+        <div class="section">
+          <span class="text-gray"> Num episodes in which appears: </span>
+          <span>${data.episode.length}</span>
+        </div>
+        <div class="section">
+          <span class="text-gray"> First seen in: </span>
+          <span> ${episode.name} </span>
+        </div>
       </div>
-    `;
+`;
 
       root.appendChild(modalContainer);
 
